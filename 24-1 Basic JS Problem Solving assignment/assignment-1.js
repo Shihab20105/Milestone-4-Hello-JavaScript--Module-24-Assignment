@@ -1,10 +1,10 @@
-/*                          24-1 Basic Javascript Problem Solving assignment */
+/*                          24-1 Basic Javascript Problem Solving assignment
 
-/* 
+
 ** Question 1: Convert radian to degree. You need to write a function where I give a number as the amount of radians, and you return how many degrees are in 5 radians, Return only the number. You must name the function exactly as it is written here.
 'radianToDegree'
 
-** Question 2: You have to check, I will give you a file name, you tell me whether it is a JavaScript file or not. You must name the function exactly as it is written here.
+** Question 2: You have to check, I will give you a file name, you tell me whether it is a JavaScript file or not. You must name the function exactly as it is written here. Return output as true or false? 
 'isJavaScriptFile'
 
     Examples:
