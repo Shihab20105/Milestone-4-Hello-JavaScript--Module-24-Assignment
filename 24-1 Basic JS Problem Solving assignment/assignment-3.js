@@ -2,105 +2,52 @@
 
                                 Assignment - (3)
 
-** Question 2: 
-You have to check, I will give you a file name, you tell me whether it is a JavaScript file or not. You must name the function exactly as it is written here. Return output as true or false? 
-'isJavaScriptFile'
+** Question 3:
+Calculate the total oil price that I have to pay.
+    diesel per litre 114
+    petrol per litre 130
+    octane per litre 135
 
-    Examples:
-    script.js
-    app.min.js
-    main.module.js
+    The first parameter will be how much diesel I want to take. For the first parameter I want 15 litre.
+    The second parameter will be how much petrol I want to take. For the second parameter I want 10 litre.
+    The third parameter will be how much octane I want to take. For the third  parameter I want 8 litre.
+How much will I have to pay in total? Return that to me in a number. You must name the function exactly as it is written here. 
+    'oilPrice'
 
-    index.html
-    style.css
-    data.json
-    image.png
 
-function isJavaScriptFile(fileName){
-    return fileName.endsWith('.js'); // Checks if the file name ends with '.js'
+function oilPrice(diesel, petrol, octane){
+    const dieselPricePerLitre = 114;
+    const petrolPricePerLitre = 130;
+    const octanePricePerLitre = 135;
+
+    const totalDieselCost = diesel * dieselPricePerLitre;
+    const totalPetrolCost = petrol * petrolPricePerLitre;
+    const totalOctaneCost = octane * octanePricePerLitre;
+
+    const totalCost = totalDieselCost + totalPetrolCost + totalOctaneCost;
+    return totalCost;
 }
 
-console.log(isJavaScriptFile('script.js'));
-console.log(isJavaScriptFile('app.min.js'));
-console.log(isJavaScriptFile('main.module.js'));
-
-console.log(isJavaScriptFile('index.html'));
-console.log(isJavaScriptFile('style.css'));
-console.log(isJavaScriptFile('data.json'));
-console.log(isJavaScriptFile('image.png'));
-// Output:
-true
-true
-true
-false
-false
-false
-false
-
-Explanation:
-'fileName.endsWith('.js')' checks if the file name ends with the '.js' extension, returning 'true' for JavaScript files and 'false' for others. 
-/ ------------------------------------------------------------------------------------------------------------ /
-
+const totalToPay = oilPrice(15, 10, 8);
+console.log(totalToPay);
+// Output: 4090
+/ ------------------------------------------------------------------------------------------------------------- /
 Or:
 
-Code with Regular Expression:
+function oilPrice(diesel, petrol, octane){
+    const dieselPricePerLitre = 114;
+    const petrolPricePerLitre = 130;
+    const octanePricePerLitre = 135;
 
-function isJavaScriptFile(fileName) {
-    return /\.js$/.test(fileName); // Uses a regular expression to check if it ends with '.js'
+    // Directly calculate and return the total cost
+    return ((diesel * dieselPricePerLitre) + (petrol * petrolPricePerLitre) + (octane * octanePricePerLitre));
 }
 
-console.log(isJavaScriptFile('script.js')); 
-console.log(isJavaScriptFile('app.min.js'));
-console.log(isJavaScriptFile('main.module.js'));
-
-console.log(isJavaScriptFile('index.html'));
-console.log(isJavaScriptFile('style.css'));
-console.log(isJavaScriptFile('data.json'));
-console.log(isJavaScriptFile('image.png'));
-// Output:
-true
-true
-true
-false
-false
-false
-false
+const totalToPay = oilPrice(15, 10, 8);
+console.log(totalToPay);
+// Output: 4090
 
 Explanation:
-    * '/\.js$/': This regular expression checks if the string ends with '.js'.
-        * '\.' matches the literal dot character.
-        * '$' asserts that '.js' is at the end of the string.
-    * '.test(fileName)' returns 'true' if the pattern matches and 'false' otherwise.
-
-This approach works exactly like the previous method but showcases another technique using regular expressions.
-
-* Both approaches are effective, but they have different use cases and performance implications. Here's a comparison to help you decide which one is better for your needs.
-
-1. 'Using endsWith('.js')' (First Method)
-
-    Advantages:
-        * Simpler and more readable: Easy to understand and maintain.
-        * Built-in method: Optimized for string operations.
-        * Recommended for modern browsers: It’s supported in most modern JavaScript environments.
-    Disadvantages:
-        * Limited to newer environments: 'endsWith()' is not available in very old JavaScript engines (pre-ES6).
-
-2. Using Regular Expression (Second Method)
-
-    Advantages:
-        * More flexible: Can be extended easily for more complex patterns (e.g., handling multiple extensions).
-        * Works in older environments: Supported in older JavaScript versions (pre-ES6).
-    Disadvantages:
-        * Less readable: Regular expressions can be harder to understand at a glance.
-        * Slightly slower: Regular expressions are generally a bit slower than simple string methods for basic checks.
-
-
-Recommendation:
-For this specific task (checking if a file name ends with '.js'):
-
-    * Use 'endsWith()' if readability and simplicity are your priority, especially if you're working in modern environments.
-    * Use the regular expression method if flexibility or compatibility with older environments is a concern or if you plan to check more complex patterns in the future.
-
-Conclusion
-    * 'endsWith()' is preferred for this specific use case because it’s easier to read and maintain.
+1. Instead of creating separate variables for individual costs ('totalDieselCost', 'totalPetrolCost', 'totalOctaneCost'), the calculation is done directly inside the 'return' statement.
+2. This version is more compact while still being readable and functional.
 */

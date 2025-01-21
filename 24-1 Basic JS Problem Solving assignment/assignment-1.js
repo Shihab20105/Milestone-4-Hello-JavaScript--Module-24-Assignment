@@ -1,64 +1,135 @@
-/*                          24-1 Basic Javascript Problem Solving assignment
+/*                          24-1 Basic Javascript Problem Solving assignment 
 
+                                Assignment - (1)
 
-** Question 1: Convert radian to degree. You need to write a function where I give a number as the amount of radians, and you return how many degrees are in 5 radians, Return only the number. You must name the function exactly as it is written here.
+** Question 1:
+ Convert radian to degree. You need to write a function where I give a number as the amount of radians, and you return how many degrees are in 5 radians, Return only the number. You must name the function exactly as it is written here.
 'radianToDegree'
 
-** Question 2: You have to check, I will give you a file name, you tell me whether it is a JavaScript file or not. You must name the function exactly as it is written here. Return output as true or false? 
-'isJavaScriptFile'
+function radianToDegree(radian){
+    return radian * (180 / Math.PI);
+}
 
-    Examples:
-    script.js
-    app.min.js
-    main.module.js
+const result = radianToDegree(5);
+console.log(result);
+// Output: 286.4788975654116
+/ ----------------------------------------------------------------------------------------------------------- /
 
-    index.html
-    style.css
-    data.json
-    image.png
+function radianToDegree(radian){
+    return (radian * (180 / Math.PI)).toFixed(1);
+}
+const result = radianToDegree(5);
+console.log(result); 
+// Output: 286.5
+/ ----------------------------------------------------------------------------------------------------------- /
 
-** Question 3: Calculate the total oil price that I have to pay.
-    diesel per litre 114
-    petrol per litre 130
-    octane per litre 135
+Here's your code for reference:
 
-    The first parameter will be how much diesel I want to take. For the first parameter I want 15 litre.
-    The second parameter will be how much petrol I want to take. For the second parameter I want 10 litre.
-    The third parameter will be how much octane I want to take. For the third  parameter I want 8 litre.
-How much will I have to pay in total? Return that to me in a number. You must name the function exactly as it is written here. 
-    'oilPrice'
+function radianToDegree(radian) {
+    return radian * (180 / Math.PI); // Converts radians to degrees
+}
 
-** Question 4: For example, I am going on a picnic. I can use three types of transportation. How much do I have to pay for public bus? You must name the function exactly as it is written here.
+const result = radianToDegree(5);
+console.log(result); 
+// Output: 286.4788975654116
 
-    Reserved bus capacity 50
-    Reserved microbus capacity 11
-    Rest will go by public bus
+What it does:
+    * The function 'radianToDegree' correctly converts 5 radians to degrees using the formula.
+    * 'console.log(result)' prints the value 286.4788975654116 to the console.
 
-Total people 65
-    Reserved bus will take 50 (With the bus i will take 50, even not less than 50. That means i will take first 50.)
-    People remaining 15
-    Microbus will take 4
-    Public bus will take rest 
+Output:
+286.4788975654116
 
-Public bus fare 250
+This is the expected output for 5 radians converted to degrees.
 
-You must name the function exactly as it is written here.
-    'publicBusFare'
+If you'd like to round the result to a more concise number (e.g., '286.5'), you can use '.toFixed()' or other rounding methods, but as it stands, this code is perfectly fine for showing the full decimal value.
 
-** Question 5: 'isBestFriend' For this i will take two parameters. And as parameter i wil take two objects and every object must have at least two properties.
-    {name: 'Tom', friend: 'Rock'}   // First parameter
-    {name: 'Rock', friend: 'Tom'}   // Second parameter
+/ ------------------------------------------------------------------------------------------------------------ /
 
-What do you have to check, if the first object i gave that one 'name' property if second objects 'friend' property value are same, and the first object we have that one 'friend' name, and the second object we have that one 'name', if both are similar then we will call them friend. 
-    That means Tom saying Rock his friend
-    And Rock saying Tom his friend.
+Here's the breakdown of your code:
 
-And they will became friend. 
+function radianToDegree(radian) {
+    return (radian * (180 / Math.PI)).toFixed(1); // Converts radians to degrees, rounded to 1 decimal
+}
 
-    {name: 'Chris', friend: 'John'} 
-    {name: 'Roy', friend: 'Chris'}
+const result = radianToDegree(5);
+console.log(result); 
+// Output: 286.5
 
-You have to return true or false?
-You must name the function exactly as it is written here.
-    'isBestFriend'
+Explanation: 
+    1. 'toFixed(1)':
+    This method rounds the result to 1 decimal place. So, instead of the full number '286.4788975654116', you get '286.5'.
+
+    2. Output:
+
+    * When you call 'radianToDegree(5)', the function computes the degree equivalent of 5 radians.
+    * 'toFixed(1)' ensures that the result is rounded to 1 decimal place.
+    * 'console.log(result)' prints '286.5'.
+Output:
+
+286.5
+
+Conclusion:
+    *The code is perfectly fine and will give you a cleaner, rounded result to 1 decimal place.
+    *If you want more or fewer decimal places, you can change the argument inside '.toFixed()', like '.toFixed(2)' for 2 decimal places.
+
+/ --------------------------------------------------------------------------------------------------------- /  
+
+function radianToDegree(radian) {
+In this line:
+
+    1. 'radian' is the parameter name.
+        * It acts as a placeholder to represent any value you pass into the function when calling it.
+        * You can think of it as a local variable that temporarily holds the input value provided by the function call.
+    
+    2. You can choose any name for the parameter, but it should be meaningful.
+
+        * In this case, "radian" is a good name because it describes the value the function expects.
+        * The function will work the same even if you use a different parameter name, like "angleInRadians". The name itself doesn’t matter to JavaScript, but using a descriptive name improves readability.
+
+Example of changing the parameter name:
+
+function radianToDegree(angleInRadians) {
+    return angleInRadians * (180 / Math.PI); // Converts radians to degrees
+}
+
+const result = radianToDegree(5); // Stores the result of the conversion // Works the same, with 5 as input
+console.log(result);
+// Output: 286.4788975654116
+
+In summary, the first line declares the parameter (radian), and you use that name inside the function body. However, the name you use when calling the function does not have to be "radian"—you pass any value directly.
+/ ------------------------------------------------------------------------------------------------------------- /
+
+You can name the parameter anything you want, as long as it makes sense and helps you understand the code. So if you write 'degree' instead of 'radian', it will still work perfectly fine.
+
+Here's an example where the parameter is named 'degree' instead:
+
+
+function radianToDegree(degree) {
+  return degree * (180 / Math.PI); // Converts radians (degree here) to degrees
+}
+
+console.log(radianToDegree(5)); // Outputs the result
+// Output: 286.4788975654116
+/ ------------------------------------------------------------------------------------------------------------- /
+Or:
+
+function radianToDegree(degree) {
+    return degree * (180 / Math.PI); // Converts radians (degree here) to degrees
+  }
+  
+const result = radianToDegree(5); 
+console.log(result); 
+// Output: 286.4788975654116
+
+Key Points:
+    * The parameter name (degree) is just a placeholder for the value that will be passed when the function is called.
+    * The function will still perform the same calculation, as long as the internal logic (the formula) is correct.
+So, it's totally okay to use 'degree' as a parameter name, but remember that the function name (radianToDegree) implies converting radians to degrees, so naming the parameter 'degree' might be a bit confusing, as it sounds like the function is doing the opposite.
+
+To keep things clear:
+
+    * 'radian' makes sense in the context of this function because you're converting radians to degrees.
+
+But functionally, it's entirely up to you to choose parameter names!
 */
